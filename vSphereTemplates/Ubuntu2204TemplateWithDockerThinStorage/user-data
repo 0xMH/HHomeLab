@@ -1,0 +1,49 @@
+#cloud-config
+chpasswd:
+    list: |
+      ubuntu:VMware1!
+    expire: false
+groups:
+  - docker
+users:
+  - default
+  - name: ubuntu
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRNdlZr5Y3yM8Wrwv/weExcjNyPZKEi+7uy8Tt404TeOkb1IOOm5CRmHoXMJe+q3x9xqCKT/oknGjDKccCgfyuidMKg3n2QXnF57Wfh3rbH9yvV/KAJAl5mXoUM6v1r9DFoysE8e3kWLFwJNJNfFHp+3usDg/Nd1L4QU56mnBORnH08FSGKmiXGXdv3ljAe/q2ijEPE6X6vJxz8TRMykhk1Xdr+pSH37rL7S0EPY+2JyanhG9TvFk3LOcFpJPvDKPot0kedDuKV1yALmKvtFGpkhXijo1PwQTsMAVYkz3FbLRfd4+0e2ciXFN0K4yU9XtdDXF3vloE2zla+OZgG9ykOD9htTInWnznqfifqET6T7kHEDat9p4OX3T2TJt0q7chZU1X0S7KXufhIWYXxzKcA7c+/UReCv3fR01HWaZN17qm+MZq55YJBJUxbDiDj8NEehvPxK8COwAGdqcAlhbudQ9HzhprLGZAcp+0+AHVyNnwa62xcQNdTvJHp3wZHecRQlWDEahh8OjY2gsu6YOI07Y+Kd25zKWcghzf6TBRN/tho4dkSVQUVFmwknTHb5lWC/l3Lq2tiYbYcyIE2pS5BUBOhcYKv44s1k0ZACq7nSPMTEuwzD12XwmVDRDcWjfKhdmaWbT+Y179ZKwlwDps6xb5CWHGDTu5SVaeyoZ7rQ== m.hamza20@icloud.com
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: sudo, docker
+    shell: /bin/bash
+apt:
+  sources:
+    kubernetes:
+      source: "deb https://apt.kubernetes.io/ kubernetes-xenial main"
+      keyserver: "hkp://keyserver.ubuntu.com:80"
+      keyid: FEEA9169307EA071
+    docker:
+      arches: amd63
+      source: "deb https://download.docker.com/linux/ubuntu jammy stable"
+      keyserver: "hkp://keyserver.ubuntu.com:80"
+      keyid: 8d81803c0ebfcd88
+package_upgrade: true
+packages:
+  - [kubelet, 1.24.0-00]
+  - [kubectl, 1.24.0-00]
+  - [kubeadm, 1.24.0-00]
+  - [docker-ce, '5:20.10.17~3-0~ubuntu-jammy']
+  - [docker-ce-cli, '5:20.10.17~3-0~ubuntu-jammy']
+  - [containerd.io, '1.6.8-1']
+runcmd:
+  - swapoff --all
+  - sed -ri '/\sswap\s/s/^#?/#/' /etc/fstab
+  - mkdir -p /etc/systemd/system/docker.service.d
+  - systemctl daemon-reload
+  - systemctl restart docker
+  - sysctl net.bridge.bridge-nf-call-iptables=1
+  - sysctl net.bridge.bridge-nf-call-ip6tables=1
+  - 'echo "disable_vmware_customization: false" >> /etc/cloud/cloud.cfg'
+  - sed -i 's/D \/tmp 1777 root root -/#D \/tmp 1777 root root -/g' /usr/lib/tmpfiles.d/tmp.conf
+  - echo -n > /etc/machine-id
+final_message: "The system is prepped, after $UPTIME seconds"
+power_state:
+  timeout: 30
+  mode: poweroff

@@ -1,0 +1,42 @@
+{
+    "DiskProvisioning": "thin",
+    "IPAllocationPolicy": "dhcpPolicy",
+    "IPProtocol": "IPv4",
+    "PropertyMapping": [
+        {
+            "Key": "instance-id",
+            "Value": "id-ovf"
+        },
+        {
+            "Key": "hostname",
+            "Value": ""
+        },
+        {
+            "Key": "seedfrom",
+            "Value": ""
+        },
+        {
+            "Key": "public-keys",
+            "Value": ""
+        },
+        {
+            "Key": "user-data",
+            "Value": "I2Nsb3VkLWNvbmZpZwpncm91cHM6CiAgLSBkb2NrZXIKdXNlcnM6CiAgLSBkZWZhdWx0CiAgLSBuYW1lOiB1YnVudHUKICAgIHNzaC1hdXRob3JpemVkLWtleXM6CiAgICAgIC0gc3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFDQVFEUk5kbFpyNVkzeU04V3J3di93ZUV4Y2pOeVBaS0VpKzd1eThUdDQwNFRlT2tiMUlPT201Q1JtSG9YTUplK3EzeDl4cUNLVC9va25HakRLY2NDZ2Z5dWlkTUtnM24yUVhuRjU3V2ZoM3JiSDl5dlYvS0FKQWw1bVhvVU02djFyOURGb3lzRThlM2tXTEZ3Sk5KTmZGSHArM3VzRGcvTmQxTDRRVTU2bW5CT1JuSDA4RlNHS21pWEdYZHYzbGpBZS9xMmlqRVBFNlg2dkp4ejhUUk15a2hrMVhkcitwU0gzN3JMN1MwRVBZKzJKeWFuaEc5VHZGazNMT2NGcEpQdkRLUG90MGtlZER1S1YxeUFMbUt2dEZHcGtoWGlqbzFQd1FUc01BVllrejNGYkxSZmQ0KzBlMmNpWEZOMEs0eVU5WHRkRFhGM3Zsb0UyemxhK09aZ0c5eWtPRDlodFRJblduem5xZmlmcUVUNlQ3a0hFRGF0OXA0T1gzVDJUSnQwcTdjaFpVMVgwUzdLWHVmaElXWVh4ektjQTdjKy9VUmVDdjNmUjAxSFdhWk4xN3FtK01acTU1WUpCSlV4YkRpRGo4TkVlaHZQeEs4Q093QUdkcWNBbGhidWRROUh6aHByTEdaQWNwKzArQUhWeU5ud2E2MnhjUU5kVHZKSHAzd1pIZWNSUWxXREVhaGg4T2pZMmdzdTZZT0kwN1krS2QyNXpLV2NnaHpmNlRCUk4vdGhvNGRrU1ZRVVZGbXdrblRIYjVsV0MvbDNMcTJ0aVliWWN5SUUycFM1QlVCT2hjWUt2NDRzMWswWkFDcTduU1BNVEV1d3pEMTJYd21WRFJEY1dqZktoZG1hV2JUK1kxNzlaS3dsd0RwczZ4YjVDV0hHRFR1NVNWYWV5b1o3clE9PSBtLmhhbXphMjBAaWNsb3VkLmNvbQogICAgc3VkbzogQUxMPShBTEwpIE5PUEFTU1dEOkFMTAogICAgZ3JvdXBzOiBzdWRvLCBkb2NrZXIKICAgIHNoZWxsOiAvYmluL2Jhc2gKYXB0OgogIHNvdXJjZXM6CiAgICBkb2NrZXI6CiAgICAgIGFyY2hlczogYW1kNjMKICAgICAgc291cmNlOiAiZGViIGh0dHBzOi8vZG93bmxvYWQuZG9ja2VyLmNvbS9saW51eC91YnVudHUgYmlvbmljIHN0YWJsZSIKICAgICAga2V5c2VydmVyOiAiaGtwOi8va2V5c2VydmVyLnVidW50dS5jb206ODAiCiAgICAgIGtleWlkOiA4ZDgxODAzYzBlYmZjZDg4CnBhY2thZ2VfdXBncmFkZTogdHJ1ZQpwYWNrYWdlczoKICAtIFtkb2NrZXItY2UsICc1OjIwLjEwLjE2fjMtMH51YnVudHUtYmlvbmljJ10Kd3JpdGVfZmlsZXM6CiAgLSBjb250ZW50OiB8CiAgICAgICAgewogICAgICAgICAgImV4ZWMtb3B0cyI6IFsibmF0aXZlLmNncm91cGRyaXZlcj1zeXN0ZW1kIl0sCiAgICAgICAgICAibG9nLWRyaXZlciI6ICJqc29uLWZpbGUiLAogICAgICAgICAgImxvZy1vcHRzIjogewogICAgICAgICAgICAibWF4LXNpemUiOiAiMTAwbSIKICAgICAgICAgIH0sCiAgICAgICAgICAic3RvcmFnZS1kcml2ZXIiOiAib3ZlcmxheTIiCiAgICAgICAgfQogICAgcGF0aDogL2V0Yy9kb2NrZXIvZGFlbW9uLmpzb24KcnVuY21kOgogIC0gc3dhcG9mZiAtLWFsbAogIC0gc2VkIC1yaSAnL1xzc3dhcFxzL3MvXiM/LyMvJyAvZXRjL2ZzdGFiCiAgLSBta2RpciAtcCAvZXRjL3N5c3RlbWQvc3lzdGVtL2RvY2tlci5zZXJ2aWNlLmQKICAtIHN5c3RlbWN0bCBkYWVtb24tcmVsb2FkCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBkb2NrZXIKICAtIHN5c2N0bCBuZXQuYnJpZGdlLmJyaWRnZS1uZi1jYWxsLWlwdGFibGVzPTEKICAtIHN5c2N0bCBuZXQuYnJpZGdlLmJyaWRnZS1uZi1jYWxsLWlwNnRhYmxlcz0xCiAgLSAnZWNobyAiZGlzYWJsZV92bXdhcmVfY3VzdG9taXphdGlvbjogZmFsc2UiID4+IC9ldGMvY2xvdWQvY2xvdWQuY2ZnJwogIC0gc2VkIC1pICdzL0QgXC90bXAgMTc3NyByb290IHJvb3QgLS8jRCBcL3RtcCAxNzc3IHJvb3Qgcm9vdCAtL2cnIC91c3IvbGliL3RtcGZpbGVzLmQvdG1wLmNvbmYKICAtIGVjaG8gLW4gPiAvZXRjL21hY2hpbmUtaWQKZmluYWxfbWVzc2FnZTogIlRoZSBzeXN0ZW0gaXMgcHJlcHBlZCwgYWZ0ZXIgJFVQVElNRSBzZWNvbmRzIgpwb3dlcl9zdGF0ZToKICB0aW1lb3V0OiAzMAogIG1vZGU6IHBvd2Vyb2ZmCg=="
+        },
+        {
+            "Key": "password",
+            "Value": ""
+        }
+    ],
+    "NetworkMapping": [
+        {
+            "Name": "VM Network",
+            "Network": "VM Network"
+        }
+    ],
+    "MarkAsTemplate": false,
+    "PowerOn": false,
+    "InjectOvfEnv": false,
+    "WaitForIP": false,
+    "Name": "Ubuntu1804TemplateWithDockerThinStorage"
+}
